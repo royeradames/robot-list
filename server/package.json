@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-datasource-rest": "^3.4.0",
     "apollo-server": "^3.4.0",
     "cross-env": "^7.0.3",
     "datasource-sql": "^1.6.0",
