@@ -1,18 +1,13 @@
 import { ApolloServer } from "apollo-server";
 import typeDefs from "./api/schema";
 import resolvers from "./api/resolvers";
-import TrackDB from "./api/datasources/track-db";
-
-/* knex config object */
-const knexConfig = require("./knexfile");
-
-const environment = process.env.DB_ENV || "development";
+import TrackAPI from "./api/datasources/track-api";
 
 /* initialize server */
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  dataSources: () => ({ db: new TrackDB(knexConfig[environment]) }),
+  dataSources: () => ({ TrackAPI: new TrackAPI() }),
 });
 
 /* give server access */
