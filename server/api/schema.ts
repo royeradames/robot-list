@@ -24,5 +24,6 @@ const typeDefs = gql`
     pic: String
     "The student's skill"
     skill: String
+  }
 `;
 export default typeDefs;
