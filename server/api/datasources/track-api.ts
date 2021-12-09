@@ -5,7 +5,7 @@ class TrackAPI extends RESTDataSource {
     this.baseURL = "https://api.hatchways.io/assessment/students";
   }
 
-  getStudents() {
+  getAllStudents() {
     return this.get("/");
   }
 }
