@@ -36,24 +36,26 @@ function App() {
   else if (data) {
     return (
       <main className="app">
-        {data.students.map((student: Student) => {
-          return (
-            <article key={student.id} className="student">
-              <img
-                src={student.pic}
-                alt={student.firstName}
-                className="student-pic"
-              />
-              <h1 className="student-name">
-                {student.firstName} {student.lastName}
-              </h1>
-              <p className="student-info">Email: {student.email}</p>
-              <p className="student-info">Company: {student.company}</p>
-              <p className="student-info">Skill: {student.skill}</p>
-              <p className="student-info">Average: {student.average}</p>
-            </article>
-          );
-        })}
+        <article className="student-list">
+          {data.students.map((student: Student) => {
+            return (
+              <article key={student.id} className="student">
+                <img
+                  src={student.pic}
+                  alt={student.firstName}
+                  className="student-pic"
+                />
+                <h1 className="student-name">
+                  {student.firstName} {student.lastName}
+                </h1>
+                <p className="student-info">Email: {student.email}</p>
+                <p className="student-info">Company: {student.company}</p>
+                <p className="student-info">Skill: {student.skill}</p>
+                <p className="student-info">Average: {student.average}</p>
+              </article>
+            );
+          })}
+        </article>
       </main>
     );
   }
