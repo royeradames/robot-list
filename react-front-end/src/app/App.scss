@@ -56,7 +56,12 @@
     font-weight: bold;
     text-transform: uppercase;
   }
-
+  /*  make the fields easy to read */
+  &-info {
+    font-weight: 200;
+    margin-left: 3%;
+    font-size: 1.6rem;
+  }
   &-email {
     grid-area: email;
   }
