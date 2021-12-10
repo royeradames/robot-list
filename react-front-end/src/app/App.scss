@@ -36,4 +36,7 @@
   column-gap: 3%;
   padding: 2% 0 2% 2%;
   text-align: left;
+  // show separation of student by a line
+  border-top: solid 0.1rem rgba(230, 228, 228, 0.479);
+  border-bottom: solid 0.1rem rgba(230, 228, 228, 0.404);
 }
