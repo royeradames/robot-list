@@ -7,15 +7,14 @@ import Spinner from "../component/spinner/spinner";
 export const GET_STUDENTS = gql`
   query getAllStudents {
     students {
-      city
       company
       firstName
       email
-      grades
       lastName
       pic
       skill
       id
+      average
     }
   }
 `;
@@ -24,11 +23,10 @@ export type Student = {
   firstName: string;
   lastName: string;
   email: string;
-  city: string;
   company: string;
   skill: string;
-  grades: number;
   pic: string;
+  average: number;
 };
 function App() {
   const { error, data } = useQuery(GET_STUDENTS);
@@ -40,17 +38,20 @@ function App() {
       <main className="App">
         {data.students.map((student: Student) => {
           return (
-            <div key={student.id}>
-              <h1>
+            <article key={student.id} className="student">
+              <img
+                src={student.pic}
+                alt={student.firstName}
+                className="student-pic"
+              />
+              <h1 className="student-name">
                 {student.firstName} {student.lastName}
               </h1>
-              <img src={student.pic} alt={student.firstName} />
-              <p>{student.email}</p>
-              <p>{student.city}</p>
-              <p>{student.company}</p>
-              <p>{student.skill}</p>
-              <p>{student.grades}</p>
-            </div>
+              <p className="student-info">Email: {student.email}</p>
+              <p className="student-info">Company: {student.company}</p>
+              <p className="student-info">Skill: {student.skill}</p>
+              <p className="student-info">Average: {student.average}</p>
+            </article>
           );
         })}
       </main>
