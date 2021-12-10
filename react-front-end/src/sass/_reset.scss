@@ -24,3 +24,10 @@ button {
   background: none;
   border: none;
 }
+
+input {
+  border: none;
+}
+input:focus-visible {
+  outline: none;
+}
