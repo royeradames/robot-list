@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
-import "../sass/index.scss";
+import "./App.scss";
 import ErrorHandler from "../component/errorHandler/errorHandler";
 import Spinner from "../component/spinner/spinner";
 
@@ -35,7 +35,7 @@ function App() {
   // handle payload
   else if (data) {
     return (
-      <main className="App">
+      <main className="app">
         {data.students.map((student: Student) => {
           return (
             <article key={student.id} className="student">
