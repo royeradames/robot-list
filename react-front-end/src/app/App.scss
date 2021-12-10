@@ -51,6 +51,10 @@
   }
   &-name {
     grid-area: name;
+    // make the name stand out
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   &-email {
