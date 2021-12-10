@@ -41,6 +41,13 @@
   border-bottom: solid 0.1rem rgba(230, 228, 228, 0.404);
   &-pic {
     grid-area: pic;
+    // make the picture a circle
+    justify-self: center;
+    align-self: center;
+    border-radius: 50%;
+    border: solid 0.1rem rgb(197, 197, 197);
+    height: 8.5rem;
+    width: 8.5rem;
   }
   &-name {
     grid-area: name;
