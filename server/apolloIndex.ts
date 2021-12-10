@@ -7,7 +7,7 @@ import TrackAPI from "./api/datasources/track-api";
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  dataSources: () => ({ TrackAPI: new TrackAPI() }),
+  dataSources: () => ({ trackAPI: new TrackAPI() }),
 });
 
 /* give server access */
