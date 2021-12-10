@@ -9,7 +9,8 @@ const resolvers = {
       grades.forEach((grade) => {
         sum += Number(grade);
       });
-      return sum / grades.length;
+      const average = `${sum / grades.length}%`;
+      return average;
     },
   },
 };

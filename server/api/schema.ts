@@ -19,7 +19,7 @@ const typeDefs = gql`
     "The student's grade"
     grades: [String]
     "Average grade of the student"
-    average: Float
+    average: String
     "The lastName of the student"
     lastName: String
     "The student's picture"
