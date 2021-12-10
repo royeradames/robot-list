@@ -18,4 +18,22 @@
     border-radius: 1rem;
     background-color: white;
   }
+  /* define the student layout */
+  min-height: 16rem;
+  display: grid;
+  grid-template:
+    "pic name"
+    "pic ." 10%
+    "pic email"
+    "pic ." 5%
+    "pic company"
+    "pic ." 5%
+    "pic skill"
+    "pic ." 5%
+    "pic average"
+    "pic ." 2%
+    / auto 1fr;
+  column-gap: 3%;
+  padding: 2% 0 2% 2%;
+  text-align: left;
 }
