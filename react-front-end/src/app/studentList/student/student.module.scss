@@ -1,13 +1,4 @@
 .student {
-  /* simulate a container that contains all students info */
-  &-list {
-    box-shadow: 0 0 0.2rem rgb(110, 110, 110);
-    width: 50vw;
-    height: 80vh;
-    overflow: auto;
-    border-radius: 1rem;
-    background-color: white;
-  }
   /* define the student layout */
   min-height: 16rem;
   display: grid;

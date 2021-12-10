@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./student.module.scss";
-import { StudentType } from "../App";
+import { StudentType } from "../studentList";
 
-export default function definStudent({ student }: { student: StudentType }) {
+export default function Student({ student }: { student: StudentType }) {
   return (
-    <article key={student.id} className={styles.student}>
+    <article className={styles.student}>
       <img
         src={student.pic}
         alt={student.firstName}
