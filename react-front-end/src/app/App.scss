@@ -1,7 +1,9 @@
-@import "./sass/variables";
-// have a different backgroound image depending on the the page
-.page {
+@import "../sass/variables";
+/* center student list, and have a contrast background */
+.app {
   min-height: 100vh;
-  
-  }
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 243, 243);
 }
