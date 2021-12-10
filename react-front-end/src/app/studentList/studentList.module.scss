@@ -1,0 +1,9 @@
+/* simulate a container that contains all students info */
+.student-list {
+  box-shadow: 0 0 0.2rem rgb(110, 110, 110);
+  width: 50vw;
+  height: 80vh;
+  overflow: auto;
+  border-radius: 1rem;
+  background-color: white;
+}
