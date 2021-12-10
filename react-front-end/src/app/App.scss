@@ -39,4 +39,23 @@
   // show separation of student by a line
   border-top: solid 0.1rem rgba(230, 228, 228, 0.479);
   border-bottom: solid 0.1rem rgba(230, 228, 228, 0.404);
+  &-pic {
+    grid-area: pic;
+  }
+  &-name {
+    grid-area: name;
+  }
+
+  &-email {
+    grid-area: email;
+  }
+  &-company {
+    grid-area: company;
+  }
+  &-skill {
+    grid-area: skill;
+  }
+  &-average {
+    grid-area: average;
+  }
 }
