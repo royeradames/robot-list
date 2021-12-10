@@ -48,10 +48,18 @@ function App() {
                 <h1 className="student-name">
                   {student.firstName} {student.lastName}
                 </h1>
-                <p className="student-info">Email: {student.email}</p>
-                <p className="student-info">Company: {student.company}</p>
-                <p className="student-info">Skill: {student.skill}</p>
-                <p className="student-info">Average: {student.average}</p>
+                <p className="student-info student-email">
+                  Email: {student.email}
+                </p>
+                <p className="student-info student-company">
+                  Company: {student.company}
+                </p>
+                <p className="student-info student-skill">
+                  Skill: {student.skill}
+                </p>
+                <p className="student-info student-average">
+                  Average: {student.average}
+                </p>
               </article>
             );
           })}
