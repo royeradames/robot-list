@@ -3,17 +3,19 @@
   min-height: 16rem;
   display: grid;
   grid-template:
-    "pic name"
-    "pic ." 10%
-    "pic email"
-    "pic ." 5%
-    "pic company"
-    "pic ." 5%
-    "pic skill"
-    "pic ." 5%
-    "pic average"
-    "pic ." 2%
-    / auto 1fr;
+    "pic name toggle"
+    "pic . toggle" 1.3rem
+    "pic email toggle"
+    "pic . toggle" 0.7rem
+    "pic company toggle"
+    "pic . ." 0.7rem
+    "pic skill ."
+    "pic . ." 0.7rem
+    "pic average ."
+    ". . ." 0.65rem
+    ". grades ."
+    ". . ." 1rem
+    / auto auto 1fr;
   column-gap: 3%;
   padding: 2% 0 2% 2%;
   text-align: left;
