@@ -14,6 +14,7 @@ export type StudentType = {
   company: string;
   skill: string;
   pic: string;
+  grades: string[];
   average: number;
 };
 export type FormData = {
@@ -29,6 +30,7 @@ export const GET_STUDENTS = gql`
       pic
       skill
       id
+      grades
       average
     }
   }
