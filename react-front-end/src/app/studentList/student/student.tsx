@@ -5,8 +5,12 @@ import { ReactComponent as PlusIcon } from "../../../assets/plus-solid.svg";
 import { ReactComponent as MinusIcon } from "../../../assets/minus-solid.svg";
 export default function Student({ student }: { student: StudentType }) {
   const [isToggle, setIsToggle] = React.useState(false);
+
+  const setClass = (classes: string[]) => {
+    return classes.map((className) => styles[className]).join(" ");
+  };
   return (
-    <article className={styles.student}>
+    <article className={setClass(["student", "student-expand-view-layout"])}>
       <img
         src={student.pic}
         alt={student.firstName}
