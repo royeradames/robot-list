@@ -67,7 +67,11 @@ export default function StudentList(): JSX.Element {
   if (data) {
     return (
       <article className={styles["student-list"]}>
-        <input {...register("name")} placeholder="Search by Name" />
+        <input
+          {...register("name")}
+          placeholder="Search by Name"
+          className={styles["student-list-input"]}
+        />
         {filterByName(watchName)}
       </article>
     );
