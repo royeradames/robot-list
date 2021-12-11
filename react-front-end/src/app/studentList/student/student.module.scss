@@ -83,5 +83,9 @@
     &-show {
       display: initial;
     }
-  
+    // hide content when button is clicked
+    &-hide {
+      display: none;
+    }
+  }
 }
