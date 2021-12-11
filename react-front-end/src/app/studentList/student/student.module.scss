@@ -88,4 +88,8 @@
       display: none;
     }
   }
+  // move grade to the grid
+  &-grades {
+    grid-area: grades;
+  }
 }
