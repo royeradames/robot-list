@@ -57,4 +57,27 @@
   &-average {
     grid-area: average;
   }
+  /* handle toggle button and content */
+  &-expand-view {
+    &-button {
+      grid-area: toggle;
+      justify-self: end;
+      margin-right: 2rem;
+      // make button stand out
+      height: 4rem;
+      width: 4rem;
+      cursor: pointer;
+      &-icon {
+        height: 100%;
+        width: 100%;
+        fill: rgb(197, 197, 197);
+        &:hover {
+          fill: rgb(0, 0, 0);
+        }
+        &:active {
+          fill: rgb(0, 0, 0);
+        }
+      }
+    }
+  
 }
