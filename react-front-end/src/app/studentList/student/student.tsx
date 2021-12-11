@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./student.module.scss";
 import { StudentType } from "../studentList";
-
+import { ReactComponent as PlusIcon } from "../../../assets/plus-solid.svg";
+import { ReactComponent as MinusIcon } from "../../../assets/minus-solid.svg";
 export default function Student({ student }: { student: StudentType }) {
+  const [isToggle, setIsToggle] = React.useState(false);
   return (
     <article className={styles.student}>
       <img
@@ -13,6 +15,18 @@ export default function Student({ student }: { student: StudentType }) {
       <h1 className={styles["student-name"]}>
         {student.firstName} {student.lastName}
       </h1>
+      <button
+        className={`${styles["student-expand-view-button"]} ${
+          isToggle ? styles["student-expand-view-button-close"] : ""
+        }`}
+        onClick={() => setIsToggle(!isToggle)}
+      >
+        {isToggle ? (
+          <MinusIcon className={styles["student-expand-view-button-icon"]} />
+        ) : (
+          <PlusIcon className={styles["student-expand-view-button-icon"]} />
+        )}
+      </button>
       <p className={`${styles["student-info"]} ${styles["student-email"]}`}>
         Email: {student.email}
       </p>
