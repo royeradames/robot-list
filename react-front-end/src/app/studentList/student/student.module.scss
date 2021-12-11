@@ -12,9 +12,6 @@
     "pic skill ."
     "pic . ." 0.7rem
     "pic average ."
-    ". . ." 0.65rem
-    ". grades ."
-    ". . ." 1rem
     / auto auto 1fr;
   column-gap: 3%;
   padding: 2% 0 2% 2%;
@@ -59,6 +56,22 @@
   }
   /* handle toggle button and content */
   &-expand-view {
+    &-layout {
+      grid-template:
+        "pic name toggle"
+        "pic . toggle" 1.3rem
+        "pic email toggle"
+        "pic . toggle" 0.7rem
+        "pic company toggle"
+        "pic . ." 0.7rem
+        "pic skill ."
+        "pic . ." 0.7rem
+        "pic average ."
+        ". . ." 0.65rem
+        ". grades ."
+        ". . ." 1rem
+        / auto auto 1fr;
+    }
     &-button {
       grid-area: toggle;
       justify-self: end;
