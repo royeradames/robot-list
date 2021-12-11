@@ -14,44 +14,46 @@ export default function Student({ student }: { student: StudentType }) {
       <img
         src={student.pic}
         alt={student.firstName}
-        className={styles["student-pic"]}
+        className={setClass(["student-pic"])}
       />
-      <h1 className={styles["student-name"]}>
+      <h1 className={setClass(["student-name"])}>
         {student.firstName} {student.lastName}
       </h1>
       <button
-        className={`${styles["student-expand-view-button"]} ${
-          isToggle ? styles["student-expand-view-button-close"] : ""
+        className={`${setClass(["student-expand-view-button"])} ${
+          isToggle ? setClass(["student-expand-view-button-close"]) : ""
         }`}
         onClick={() => setIsToggle(!isToggle)}
       >
         {isToggle ? (
-          <MinusIcon className={styles["student-expand-view-button-icon"]} />
+          <MinusIcon
+            className={setClass(["student-expand-view-button-icon"])}
+          />
         ) : (
-          <PlusIcon className={styles["student-expand-view-button-icon"]} />
+          <PlusIcon className={setClass(["student-expand-view-button-icon"])} />
         )}
       </button>
       <article
         className={`${
           isToggle
-            ? styles["student-expand-view-show"]
-            : styles["student-expand-view-hide"]
-        } ${styles["student-info"]} ${styles["student-grades"]}`}
+            ? setClass(["student-expand-view-show"])
+            : setClass(["student-expand-view-hide"])
+        } ${setClass(["student-info", "student-grades"])}`}
       >
         {student?.grades?.map((grade: string, index: number) => (
           <p key={index}>{`Test ${index + 1}:   ${grade} %`}</p>
         ))}
       </article>
-      <p className={`${styles["student-info"]} ${styles["student-email"]}`}>
+      <p className={setClass(["student-info", "student-email"])}>
         Email: {student.email}
       </p>
-      <p className={`${styles["student-info"]} ${styles["student-company"]}`}>
+      <p className={setClass(["student-info", "student-company"])}>
         Company: {student.company}
       </p>
-      <p className={`${styles["student-info"]} ${styles["student-skill"]}`}>
+      <p className={setClass(["student-info", "student-skill"])}>
         Skill: {student.skill}
       </p>
-      <p className={`${styles["student-info"]} ${styles["student-average"]}`}>
+      <p className={setClass(["student-info", "student-average"])}>
         Average: {student.average}
       </p>
     </article>
