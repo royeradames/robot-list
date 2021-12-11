@@ -27,6 +27,17 @@ export default function Student({ student }: { student: StudentType }) {
           <PlusIcon className={styles["student-expand-view-button-icon"]} />
         )}
       </button>
+      <article
+        className={`${
+          isToggle
+            ? styles["student-expand-view-show"]
+            : styles["student-expand-view-hide"]
+        } ${styles["student-info"]} ${styles["student-grades"]}`}
+      >
+        {student?.grades?.map((grade: string, index: number) => (
+          <p key={index}>{`Test ${index + 1}:   ${grade} %`}</p>
+        ))}
+      </article>
       <p className={`${styles["student-info"]} ${styles["student-email"]}`}>
         Email: {student.email}
       </p>
