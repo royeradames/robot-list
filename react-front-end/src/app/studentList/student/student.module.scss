@@ -77,6 +77,11 @@
   // add tag list to layout
   &-tag-list {
     grid-area: tag-list;
+
+    display: flex;
+    // add a bit of white space seaprting each tag
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
   }
   /* handle toggle button and content */
   &-expand-view {
