@@ -84,6 +84,13 @@
     row-gap: 0.5rem;
     // wrap tags to different lines
     flex-wrap: wrap;
+
+    /* have each tag resemble a grey flat button */
+    &-tag {
+      width: max-content;
+      padding: 1rem;
+      background-color: lightgray;
+    }
   }
   /* handle toggle button and content */
   &-expand-view {
