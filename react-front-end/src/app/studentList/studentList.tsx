@@ -68,6 +68,13 @@ export default function StudentList(): JSX.Element {
     watchName: string | undefined,
     watchTag: string | undefined
   ) => {
+    function filterByAll(
+      student: StudentType,
+      watchName: string,
+      watchTag: string
+    ) {
+      return filterByName(student, watchName) && filterByTag(student, watchTag);
+    }
     function filterByTag(student: StudentType, watchTag: string = "") {
       let isTagFound = false;
 
