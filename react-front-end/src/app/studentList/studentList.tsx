@@ -135,6 +135,11 @@ export default function StudentList(): JSX.Element {
           placeholder="Search by Name"
           className={styles["student-list-input"]}
         />
+        <input
+          {...register("tag")}
+          placeholder="Search by Tag"
+          className={styles["student-list-input"]}
+        />
         {filterByName(watchName)}
       </article>
     );
