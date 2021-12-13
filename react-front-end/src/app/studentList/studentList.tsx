@@ -32,6 +32,8 @@ export type FilterData = {
 export default function StudentList(): JSX.Element {
   /* handle the student list data */
   const [studentList, setStudentList] = useState<StudentType[]>([]);
+  /* handle the display of error message */
+  const [error, setError] = useState(false);
 
   /* gather student data from server */
   useEffect(() => {
