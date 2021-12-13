@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./student.module.scss";
-import { StudentType } from "../studentList";
 import { ReactComponent as PlusIcon } from "../../../assets/plus-solid.svg";
 import { ReactComponent as MinusIcon } from "../../../assets/minus-solid.svg";
+import { useForm } from "react-hook-form";
+import { StudentType } from "../studentList";
+
+/* define form input data */
+export type TagData = {
+  tags: string;
+};
 export default function Student({ student }: { student: StudentType }) {
   const [isToggle, setIsToggle] = React.useState(false);
 
