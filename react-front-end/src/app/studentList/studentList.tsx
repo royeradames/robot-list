@@ -68,6 +68,16 @@ export default function StudentList(): JSX.Element {
     watchName: string | undefined,
     watchTag: string | undefined
   ) => {
+    function filterByTag(student: StudentType, watchTag: string = "") {
+      let isTagFound = false;
+
+      student.tags.forEach((tag: string) => {
+        if (tag.toLowerCase().includes(watchTag)) {
+          isTagFound = true;
+        }
+      });
+      return isTagFound;
+    }
     function filterByName(student: StudentType, watchName: string = "") {
       const name = `${student.firstName.toLowerCase()} ${student.lastName.toLowerCase()}`;
       return name.includes(watchName);
