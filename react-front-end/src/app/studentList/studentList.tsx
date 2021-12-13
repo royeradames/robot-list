@@ -68,6 +68,20 @@ export default function StudentList(): JSX.Element {
     watchName: string | undefined,
     watchTag: string | undefined
   ) => {
+    const displayAllStudents = !watchName && !watchTag;
+    if (displayAllStudents) {
+      return studentList.map((student: StudentType, index: number) => {
+        return (
+          <Student
+            key={student.id}
+            student={student}
+            index={index}
+            students={studentList}
+            setStudents={setStudentList}
+          />
+        );
+      });
+    }
     function filterByAll(
       student: StudentType,
       watchName: string,
