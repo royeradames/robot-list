@@ -70,6 +70,11 @@
     row-gap: 0.3rem;
   }
 
+  // add input tag to layout
+  &-input-tag {
+    grid-area: input-tag;
+  }
+
   /* handle toggle button and content */
   &-expand-view {
     &-button {
