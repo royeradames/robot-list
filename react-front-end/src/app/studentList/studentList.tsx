@@ -127,7 +127,7 @@ export default function StudentList(): JSX.Element {
   // handle error
   if (error) return <ErrorHandler error={error} />;
   // handle payload
-  if (data) {
+  else if (studentList) {
     return (
       <article className={styles["student-list"]}>
         <input
