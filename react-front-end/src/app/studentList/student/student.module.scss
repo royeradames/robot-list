@@ -11,7 +11,14 @@
     "pic skill ."
     "pic . ." 0.7rem
     "pic average ."
-    / auto auto 1fr;
+    ". . ." 0.65rem
+    ". grades ."
+    ". . ." 1rem
+    ". tag-list ."
+    ". . ." 1rem
+    ". input-tag ."
+    ". . ." 0.7rem
+    / auto 1fr max-content;
   column-gap: 3%;
   padding: 2% 0 2% 2%;
   text-align: left;
@@ -79,9 +86,5 @@
     &-hide {
       display: none;
     }
-  }
-  // move grade to the grid
-  &-grades {
-    grid-area: grades;
   }
 }
