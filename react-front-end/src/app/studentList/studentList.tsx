@@ -61,28 +61,16 @@ export default function StudentList(): JSX.Element {
         );
       })
       /* Set Handle Error when there is an error */
-      .catch(() => setError(true));
+      .catch((_) => setError(true));
   }, []);
 
-  const filterByName = (watchName: string | undefined) => {
-    /*
-      filter the list with the watchName value
-      - if watchName is empty, show all the list
-      - if watchName is not empty, filter the list with the watchName value
-        - if the watchName value is in the firstName or lastName, show the student
-    */
-    if (watchName) {
-      const filterStudent = data.students.filter((student: StudentType) => {
-        const name = `${student.firstName.toLowerCase()} ${student.lastName.toLowerCase()}`;
-        return name.includes(watchName);
-      });
-      return filterStudent.map((student: StudentType) => {
-        return <Student key={student.id} student={student} />;
-      });
-    } else {
-      return data.students.map((student: StudentType) => {
-        return <Student key={student.id} student={student} />;
-      });
+  const filterStudentsList = (
+    watchName: string | undefined,
+    watchTag: string | undefined
+  ) => {
+    function filterByName(student: StudentType, watchName: string = "") {
+      const name = `${student.firstName.toLowerCase()} ${student.lastName.toLowerCase()}`;
+      return name.includes(watchName);
     }
   };
 
