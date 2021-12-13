@@ -31,8 +31,20 @@ export default function Student({
     reset,
     formState: { isSubmitSuccessful },
   } = useForm<TagData>();
-  const setClass = (classes: string[]) => {
-    return classes.map((className) => styles[className]).join(" ");
+
+  /* simplify the class set up for css module */
+  type ConditonalClass = {
+    conditon: boolean;
+    class: string;
+  };
+  const setClass = (classes: (string | ConditonalClass)[]) => {
+    return classes
+      .map((className) => {
+        if (typeof className === "object") {
+          return className.conditon ? styles[className.class] : "";
+        } else return styles[className];
+      })
+      .join(" ");
   };
   return (
     <article className={setClass(["student", "student-expand-view-layout"])}>
