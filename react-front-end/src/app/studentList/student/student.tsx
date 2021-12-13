@@ -22,6 +22,7 @@ export default function Student({
   students: StudentType[];
   setStudents: React.Dispatch<React.SetStateAction<StudentType[]>>;
 }) {
+  /* handle the toggle of grades */
   const [isToggle, setIsToggle] = React.useState(false);
 
   const setClass = (classes: string[]) => {
