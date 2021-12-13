@@ -65,20 +65,22 @@ export default function Student({
       reset();
     }
   }, [isSubmitSuccessful, reset]);
+
+  /* Display student information */
   return (
-    <article className={setClass(["student", "student-expand-view-layout"])}>
+    <article className={setClass(["student"])}>
       <img
-        src={student.pic}
-        alt={student.firstName}
+        src={currentStudent.pic}
+        alt={currentStudent.firstName}
         className={setClass(["student-pic"])}
       />
       <h1 className={setClass(["student-name"])}>
-        {student.firstName} {student.lastName}
+        {currentStudent.firstName} {currentStudent.lastName}
       </h1>
+
+      {/* when button is click it shows/hiddes */}
       <button
-        className={`${setClass(["student-expand-view-button"])} ${
-          isToggle ? setClass(["student-expand-view-button-close"]) : ""
-        }`}
+        className={setClass(["student-expand-view-button"])}
         onClick={() => setIsToggle(!isToggle)}
       >
         {isToggle ? (
@@ -89,28 +91,31 @@ export default function Student({
           <PlusIcon className={setClass(["student-expand-view-button-icon"])} />
         )}
       </button>
+
+      {/* render grades */}
       <article
-        className={`${
-          isToggle
-            ? setClass(["student-expand-view-show"])
-            : setClass(["student-expand-view-hide"])
-        } ${setClass(["student-info", "student-grades"])}`}
+        className={`${setClass([
+          "student-info",
+          "student-grades",
+          { conditon: !isToggle, class: "student-expand-view-hide" },
+        ])}`}
       >
-        {student?.grades?.map((grade: string, index: number) => (
-          <p key={index}>{`Test ${index + 1}:   ${grade} %`}</p>
-        ))}
+        {currentStudent?.grades?.map((grade: string, index: number) => {
+          const testNumber = index + 1;
+          return <p key={index}>{`Test ${testNumber}:   ${grade} %`}</p>;
+        })}
       </article>
       <p className={setClass(["student-info", "student-email"])}>
-        Email: {student.email}
+        Email: {currentStudent.email}
       </p>
       <p className={setClass(["student-info", "student-company"])}>
-        Company: {student.company}
+        Company: {currentStudent.company}
       </p>
       <p className={setClass(["student-info", "student-skill"])}>
-        Skill: {student.skill}
+        Skill: {currentStudent.skill}
       </p>
       <p className={setClass(["student-info", "student-average"])}>
-        Average: {student.average}
+        Average: {currentStudent.average}%
       </p>
     </article>
   );
