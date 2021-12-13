@@ -9,7 +9,14 @@ import { StudentType } from "../studentList";
 export type TagData = {
   tags: string;
 };
-export default function Student({ student }: { student: StudentType }) {
+export default function Student({
+  /* current student data in display */
+  student: currentStudent,
+  index: currentStudentIndex,
+}: {
+  student: StudentType;
+  index: number;
+}) {
   const [isToggle, setIsToggle] = React.useState(false);
 
   const setClass = (classes: string[]) => {
