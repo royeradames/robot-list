@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Student from "./student/student";
 import styles from "./studentList.module.scss";
 import { useQuery, gql } from "@apollo/client";
-
+import axios from "axios";
 export type StudentType = {
   id: string;
   firstName: string;
@@ -20,27 +20,37 @@ export type StudentType = {
 export type FormData = {
   name: string;
 };
-export const GET_STUDENTS = gql`
-  query getAllStudents {
-    students {
-      company
-      firstName
-      email
-      lastName
-      pic
-      skill
-      id
-      grades
-      average
-    }
-  }
-`;
 
 export default function StudentList(): JSX.Element {
   const { register, watch } = useForm<FormData>();
   const watchName = watch("name");
 
-  const { error, data } = useQuery(GET_STUDENTS);
+  /* gather student data from server */
+  useEffect(() => {
+    axios
+      .get("https://api.hatchways.io/assessment/students")
+      // unwrap student data
+      .then((res) => res.data.students)
+      /* save student data to state with new fields of averages and tags */
+      .then((students) => {
+        setStudentList(
+          students.map((student: FetchStudentType) => {
+            return {
+              ...student,
+              // calculate the average score
+              average:
+                student?.grades.reduce((a, b) => Number(a) + Number(b), 0) /
+                  student?.grades.length || 0,
+              // initialize the tags field
+              tags: [],
+            };
+          })
+        );
+      })
+      /* Set Handle Error when there is an error */
+      .catch(() => setError(true));
+  }, []);
+
   const filterByName = (watchName: string | undefined) => {
     /*
       filter the list with the watchName value
