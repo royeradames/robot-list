@@ -64,7 +64,7 @@ export default function StudentList(): JSX.Element {
       .catch((_) => setError(true));
   }, []);
 
-  const filterStudentsList = (
+  const renderStudentsList = (
     studentList: StudentType[],
     watchName: string | undefined,
     watchTag: string | undefined
@@ -83,6 +83,7 @@ export default function StudentList(): JSX.Element {
         );
       });
     } else {
+      /* render student list that pass the active filters */
       const filterStudentList = studentList.filter((student: StudentType) => {
         const byAllFilters = watchTag && watchName;
         if (byAllFilters) return filterByAll(student, watchName, watchTag);
@@ -90,7 +91,7 @@ export default function StudentList(): JSX.Element {
         else return filterByTag(student, watchTag);
       });
 
-      /* render student list element*/
+      // render student list element
       return filterStudentList.map((student: StudentType, index: number) => {
         return (
           <Student
@@ -141,7 +142,7 @@ export default function StudentList(): JSX.Element {
           placeholder="Search by Tag"
           className={styles["student-list-input"]}
         />
-        {filterStudentsList(studentList, watchName, watchTag)}
+        {renderStudentsList(studentList, watchName, watchTag)}
       </article>
     );
   }
