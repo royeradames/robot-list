@@ -34,7 +34,10 @@ export default function StudentList(): JSX.Element {
   const [studentList, setStudentList] = useState<StudentType[]>([]);
   /* handle the display of error message */
   const [error, setError] = useState(false);
-
+  /* capture value of input and updates store in varible everytime input changes */
+  const { register, watch } = useForm<FilterData>();
+  const watchName = watch("name");
+  const watchTag = watch("tag");
   /* gather student data from server */
   useEffect(() => {
     axios
