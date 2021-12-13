@@ -65,6 +65,7 @@ export default function StudentList(): JSX.Element {
   }, []);
 
   const filterStudentsList = (
+    studentList: StudentType[],
     watchName: string | undefined,
     watchTag: string | undefined
   ) => {
@@ -140,7 +141,7 @@ export default function StudentList(): JSX.Element {
           placeholder="Search by Tag"
           className={styles["student-list-input"]}
         />
-        {filterStudentsList(watchName, watchTag)}
+        {filterStudentsList(studentList, watchName, watchTag)}
       </article>
     );
   }
