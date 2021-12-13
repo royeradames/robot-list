@@ -24,6 +24,11 @@ export interface StudentType extends FetchStudentType {
   tags: string[];
 }
 
+export type FilterData = {
+  name: string;
+  tag: string;
+};
+
 export default function StudentList(): JSX.Element {
   const { register, watch } = useForm<FormData>();
   const watchName = watch("name");
