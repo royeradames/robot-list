@@ -18,6 +18,12 @@ export type FetchStudentType = {
   average: number;
 };
 
+/* Student List type */
+export interface StudentType extends FetchStudentType {
+  average: number;
+  tags: string[];
+}
+
 export default function StudentList(): JSX.Element {
   const { register, watch } = useForm<FormData>();
   const watchName = watch("name");
