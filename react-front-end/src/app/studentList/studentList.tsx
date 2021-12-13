@@ -30,8 +30,8 @@ export type FilterData = {
 };
 
 export default function StudentList(): JSX.Element {
-  const { register, watch } = useForm<FormData>();
-  const watchName = watch("name");
+  /* handle the student list data */
+  const [studentList, setStudentList] = useState<StudentType[]>([]);
 
   /* gather student data from server */
   useEffect(() => {
