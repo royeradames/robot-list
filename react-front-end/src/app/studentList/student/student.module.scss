@@ -60,6 +60,11 @@
   &-average {
     grid-area: average;
   }
+  // move grade to the grid
+  &-grades {
+    grid-area: grades;
+  }
+
   /* handle toggle button and content */
   &-expand-view {
     &-button {
