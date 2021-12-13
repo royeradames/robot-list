@@ -24,7 +24,13 @@ export default function Student({
 }) {
   /* handle the toggle of grades */
   const [isToggle, setIsToggle] = React.useState(false);
-
+  /* capture new tag string  */
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { isSubmitSuccessful },
+  } = useForm<TagData>();
   const setClass = (classes: string[]) => {
     return classes.map((className) => styles[className]).join(" ");
   };
