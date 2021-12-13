@@ -124,9 +124,8 @@ export default function StudentList(): JSX.Element {
       return name.includes(watchName);
     }
   };
-
   // handle error
-  if (error) <ErrorHandler error={error} />;
+  if (error) return <ErrorHandler error={error} />;
   // handle payload
   if (data) {
     return (
