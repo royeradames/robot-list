@@ -81,6 +81,26 @@ export default function StudentList(): JSX.Element {
           />
         );
       });
+    } else {
+      const filterStudentList = studentList.filter((student: StudentType) => {
+        const byAllFilters = watchTag && watchName;
+        if (byAllFilters) return filterByAll(student, watchName, watchTag);
+        else if (watchName) return filterByName(student, watchName);
+        else return filterByTag(student, watchTag);
+      });
+
+      /* render student list element*/
+      return filterStudentList.map((student: StudentType, index: number) => {
+        return (
+          <Student
+            key={student.id}
+            student={student}
+            index={index}
+            students={studentList}
+            setStudents={setStudentList}
+          />
+        );
+      });
     }
     function filterByAll(
       student: StudentType,
