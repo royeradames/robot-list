@@ -58,6 +58,13 @@ export default function Student({
       )
     );
   });
+
+  /* reset input tag field when tag is added */
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
   return (
     <article className={setClass(["student", "student-expand-view-layout"])}>
       <img
