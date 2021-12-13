@@ -63,6 +63,11 @@
   // move grade to the grid
   &-grades {
     grid-area: grades;
+
+    // add a bit of white space seaprting each grade
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
   }
 
   /* handle toggle button and content */
