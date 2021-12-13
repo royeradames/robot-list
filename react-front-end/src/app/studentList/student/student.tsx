@@ -126,6 +126,10 @@ export default function Student({
           </p>
         ))}
       </article>
+      {/* add text field to add tags */}
+      <form onSubmit={onSubmit} className={styles["student-input-tag"]}>
+        <input {...register("tags")} placeholder="Add a tag" />
+      </form>
     </article>
   );
 }
