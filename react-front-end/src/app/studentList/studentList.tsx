@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ErrorHandler from "../../component/errorHandler/errorHandler";
 import Spinner from "../../component/spinner/spinner";
 import { useForm } from "react-hook-form";
 import Student from "./student/student";
 import styles from "./studentList.module.scss";
-import { useQuery, gql } from "@apollo/client";
 import axios from "axios";
-export type StudentType = {
+/* incomeing data structure */
+export type FetchStudentType = {
   id: string;
   firstName: string;
   lastName: string;
@@ -16,9 +16,6 @@ export type StudentType = {
   pic: string;
   grades: string[];
   average: number;
-};
-export type FormData = {
-  name: string;
 };
 
 export default function StudentList(): JSX.Element {
