@@ -13,9 +13,14 @@ export default function Student({
   /* current student data in display */
   student: currentStudent,
   index: currentStudentIndex,
+  /* general student list */
+  students: studentList,
+  setStudents: setStudentList,
 }: {
   student: StudentType;
   index: number;
+  students: StudentType[];
+  setStudents: React.Dispatch<React.SetStateAction<StudentType[]>>;
 }) {
   const [isToggle, setIsToggle] = React.useState(false);
 
