@@ -117,6 +117,15 @@ export default function Student({
       <p className={setClass(["student-info", "student-average"])}>
         Average: {currentStudent.average}%
       </p>
+
+      {/* render tags when they exist */}
+      <article className={setClass(["student-info", "student-tag-list"])}>
+        {currentStudent.tags.map((tag: string, index: number) => (
+          <p key={index} className={setClass(["student-tag-list-tag"])}>
+            {tag}
+          </p>
+        ))}
+      </article>
     </article>
   );
 }
