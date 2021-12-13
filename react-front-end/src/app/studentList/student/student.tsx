@@ -4,6 +4,7 @@ import { ReactComponent as PlusIcon } from "../../../assets/plus-solid.svg";
 import { ReactComponent as MinusIcon } from "../../../assets/minus-solid.svg";
 import { useForm } from "react-hook-form";
 import { StudentType } from "../studentList";
+import innitSetClass from "../../../utils/setClass";
 
 /* define form input data */
 export type TagData = {
@@ -22,6 +23,7 @@ export default function Student({
   students: StudentType[];
   setStudents: React.Dispatch<React.SetStateAction<StudentType[]>>;
 }) {
+  const setClass = innitSetClass(styles);
   /* handle the toggle of grades */
   const [isToggle, setIsToggle] = React.useState(false);
   /* capture new tag string  */
@@ -31,21 +33,6 @@ export default function Student({
     reset,
     formState: { isSubmitSuccessful },
   } = useForm<TagData>();
-
-  /* simplify the class set up for css module */
-  type ConditonalClass = {
-    conditon: boolean;
-    class: string;
-  };
-  const setClass = (classes: (string | ConditonalClass)[]) => {
-    return classes
-      .map((className) => {
-        if (typeof className === "object") {
-          return className.conditon ? styles[className.class] : "";
-        } else return styles[className];
-      })
-      .join(" ");
-  };
 
   /* add tag string to the student tag field */
   const onSubmit = handleSubmit(({ tags: newTag }) => {
