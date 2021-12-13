@@ -8,16 +8,5 @@
   background-color: white;
   &-input {
     width: 96%;
-    border-bottom: solid 0.1rem rgb(212, 212, 212);
-    padding: 1rem;
-    font-size: 1.6rem;
-    margin: 0 2%;
-    &:active {
-      border: none;
-      border-bottom: solid 0.1rem black;
-    }
-    &:focus {
-      border-bottom: solid 0.1rem black;
-    }
   }
 }
