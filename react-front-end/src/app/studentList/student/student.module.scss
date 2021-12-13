@@ -74,7 +74,10 @@
   &-input-tag {
     grid-area: input-tag;
   }
-
+  // add tag list to layout
+  &-tag-list {
+    grid-area: tag-list;
+  }
   /* handle toggle button and content */
   &-expand-view {
     &-button {
