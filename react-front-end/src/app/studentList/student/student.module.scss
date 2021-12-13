@@ -82,6 +82,8 @@
     // add a bit of white space seaprting each tag
     column-gap: 0.5rem;
     row-gap: 0.5rem;
+    // wrap tags to different lines
+    flex-wrap: wrap;
   }
   /* handle toggle button and content */
   &-expand-view {
