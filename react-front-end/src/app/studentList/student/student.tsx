@@ -46,6 +46,18 @@ export default function Student({
       })
       .join(" ");
   };
+
+  /* add tag string to the student tag field */
+  const onSubmit = handleSubmit(({ tags: newTag }) => {
+    setStudentList(
+      studentList.map((student, StudentIndex) =>
+        /* only add the tag if it doesn't already exist */
+        StudentIndex === currentStudentIndex && !student.tags.includes(newTag)
+          ? { ...student, tags: [...student.tags, newTag] }
+          : student
+      )
+    );
+  });
   return (
     <article className={setClass(["student", "student-expand-view-layout"])}>
       <img
