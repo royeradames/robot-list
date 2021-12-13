@@ -140,7 +140,7 @@ export default function StudentList(): JSX.Element {
           placeholder="Search by Tag"
           className={styles["student-list-input"]}
         />
-        {filterByName(watchName)}
+        {filterStudentsList(watchName, watchTag)}
       </article>
     );
   }
